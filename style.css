@@ -1,0 +1,292 @@
+/* 
+  Sidra (سيدرا) - Global Design System
+  Feminine, Modern, Premium E-commerce Aesthetic
+*/
+
+:root {
+    /* Color Palette */
+    --primary: #d4a373; /* Muted Gold/Beige */
+    --accent: #fec5bb; /* Soft Pink */
+    --background: #fffafa; /* Off-white / Snow */
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
+    --white: #ffffff;
+    --black: #000000;
+    --highlight: #ff4d6d; /* Vibrant pink for urgency */
+    
+    /* Typography */
+    --font-arabic: 'Cairo', sans-serif;
+    --font-latin: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --section-padding: 80px 20px;
+    --container-width: 1200px;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-arabic), var(--font-latin);
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    direction: rtl; /* Arabic priority */
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+/* --- Hero Section --- */
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    animation: fadeInUp 1.2s ease;
+}
+
+/* --- Banner (Urgency) --- */
+.top-banner {
+    background: var(--highlight);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+    font-size: 0.9rem;
+}
+
+/* --- Slider Section --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--white);
+    width: 30px;
+    border-radius: 10px;
+}
+
+/* --- Offer Section --- */
+.offer-section {
+    padding: var(--section-padding);
+    text-align: center;
+    background: var(--white);
+}
+
+.offer-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 2px dashed var(--accent);
+    border-radius: 20px;
+    background: #fffafa;
+}
+
+.offer-card h2 {
+    font-size: 2.5rem;
+    color: var(--highlight);
+    margin-bottom: 20px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.timer-box {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.timer-box span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.timer-box label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* --- Button Styles --- */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--text-dark);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: var(--highlight);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3);
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .slider-container {
+        height: 350px;
+        margin: 20px;
+    }
+    .offer-card {
+        padding: 20px;
+    }
+}
